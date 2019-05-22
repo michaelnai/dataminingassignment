@@ -26,7 +26,7 @@ Milestone 5
 - Decision Tree and Logistic Regression using SAS
 
 Milestone 6      
-- Suggesting Trade Strategy using Markovitz Portfolio Theory
+- Suggesting Trade Strategy using Markowitz Portfolio Theory
 - Target stock are selected based on Sharpe Ratio
 - Additional Feature Engineering prior to modelling 
 - RSI and Moving Average
