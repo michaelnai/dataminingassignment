@@ -30,4 +30,4 @@ Milestone 6
 - Target stock are selected based on Sharpe Ratio
 - Additional Feature Engineering prior to modelling 
 - RSI and Moving Average
-- Predicting Stock Movement with XGBoost Regression Tree  
+- Predicting Stock Movement with XGBoost Classifier  
