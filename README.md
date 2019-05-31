@@ -22,6 +22,7 @@ Milestone 4
 - EDA using SAS
 
 Milestone 5       
+- Convert target variable to binary
 - Modelling predictive model to predict stock price movement of the selected stocks
 - Decision Tree and Logistic Regression using SAS
 
