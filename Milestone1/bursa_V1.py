@@ -3,7 +3,7 @@ import pandas as pd
 from selenium import webdriver
 from selenium.webdriver.support.ui import WebDriverWait
 from bs4 import BeautifulSoup
-chrome = r"C:\Downloads\chromedriver.exe"
+chrome = r"chromedriver.exe"
 driver = webdriver.Chrome(executable_path = chrome)
 
 pages=[]
