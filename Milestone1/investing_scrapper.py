@@ -19,7 +19,7 @@ import threading
 
 
 def investing_scrap( data,start,end):
-    chrome = r"C:\Program Files (x86)\Google\Chrome\Application\chromedriver.exe"
+    chrome = r"chromedriver.exe"
     driver = webdriver.Chrome(executable_path = chrome)
     driver.implicitly_wait(60)
     df=data
