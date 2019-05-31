@@ -8,8 +8,8 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 # ================================================= Import ================================================= #
 
-path = r'https://raw.githubusercontent.com/michaelnai/dataminingassignment/master/Milestone4/stock_data_2019_Q1/'
-pickle_df = pd.read_pickle(r'Milestone4/df.pkl')
+path = r'https://github.com/michaelnai/dataminingassignment/tree/master/Milestone4/stock_data_2019_Q1/'
+pickle_df = pd.read_pickle(r'https://github.com/michaelnai/dataminingassignment/blob/master/Milestone4/df.pkl')
 code_df = pickle_df[['code','name']]
 
 
@@ -141,7 +141,7 @@ kjcs_stock_df = stock_df.loc[stock_df['Stock'].str.contains(get_top_n_stock(shar
 cbms_stock_df = stock_df.loc[stock_df['Stock'].str.contains(get_top_n_stock(sharpe,5)[2])]
 
 
-sentiment_df = pd.read_csv('/Users/siuhongnai/Desktop/WQD7005 - Data Mining/milestone4_cleaned_data/cleaned_headlines.csv')
+sentiment_df = pd.read_csv('https://github.com/michaelnai/dataminingassignment/blob/master/Milestone4/milestone4_cleaned_data/cleaned_headlines.csv')
 sentiment_df.drop('Unnamed: 0', axis=1, inplace = True )
 sentiment_df.columns
 sentiment_df['date'] = sentiment_df['date'].apply(lambda x: dt.datetime.strptime(x, '%Y-%m-%d'))
