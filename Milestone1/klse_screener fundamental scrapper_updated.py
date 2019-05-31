@@ -9,7 +9,7 @@ import bs4 as bs
 import urllib.request
 import datetime as dt
 
-stock_list = pd.read_pickle(r"klse_screener.pkl")
+stock_list = pd.read_pickle(r"https://github.com/michaelnai/dataminingassignment/blob/master/Milestone1/klse_screener.pkl")
 stock_fundamental = pd.DataFrame(columns=['Stock', 'Stock Code', 'High', 'Low', 'Volume', '52w', 'ROE', 'P/E', 'EPS',
                                           'DPS', 'DY', 'PTBV', 'RPS', 'PSR', 'Market Cap'])
 
