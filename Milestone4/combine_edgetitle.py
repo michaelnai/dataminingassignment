@@ -5,7 +5,7 @@ from datetime import datetime
 import numpy as np
 from textblob import TextBlob
 
-path = r'/Users/siuhongnai/Desktop/WQD7005 - Data Mining/theedge_headlines/'
+path = r'https://github.com/michaelnai/dataminingassignment/tree/master/Milestone4/theedge_headlines/'
 
 files = glob.glob(os.path.join(path, "*.csv"))
 headlines_list = []
