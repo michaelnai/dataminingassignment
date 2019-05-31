@@ -5,15 +5,15 @@ import matplotlib.pyplot as plt
 from talib import RSI, BBANDS
 
 
-headlines = pd.read_csv("headlines_df_m6.csv",index_col=0)
+headlines = pd.read_csv("https://github.com/michaelnai/dataminingassignment/blob/master/Milestone6/milestone6data/headlines_df_m6.csv",index_col=0)
 headlines = headlines.rename({'date':'Date'},axis='columns')
-headlines_test = pd.read_csv("headlines_df_m6_test.csv",index_col=0)
+headlines_test = pd.read_csv("https://github.com/michaelnai/dataminingassignment/blob/master/Milestone6/milestone6data/headlines_df_m6_test.csv",index_col=0)
 headlines_test = headlines_test.rename({'date':'Date'},axis='columns')
 
 headlines = pd.concat([headlines,headlines_test])
 
-stocks = pd.read_csv("cleaned_stock_data_m6.csv",index_col=0,dtype={'code':'object'})
-stocks_test = pd.read_csv("cleaned_stock_data_m6_test.csv",index_col=0,dtype={'code':'object'})
+stocks = pd.read_csv("https://github.com/michaelnai/dataminingassignment/blob/master/Milestone6/milestone6data/cleaned_stock_data_m6.csv",index_col=0,dtype={'code':'object'})
+stocks_test = pd.read_csv("https://github.com/michaelnai/dataminingassignment/blob/master/Milestone6/milestone6data/cleaned_stock_data_m6_test.csv",index_col=0,dtype={'code':'object'})
 
 # Calculate average Sharpe Ratio for each industry and identify the top n industries in terms of Sharpe Ratio
 sector_sharpe = stocks.groupby('sector').mean().sort_values('Sharpe Ratio')
