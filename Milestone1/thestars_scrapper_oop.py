@@ -11,7 +11,7 @@ import time
 
 PROJECT_ROOT = os.path.abspath(os.path.dirname(__file__))
 chrome = os.path.join(PROJECT_ROOT, "chromedriver")
-MY_EXPORT_ROOT = "/Users/zeroyan/Documents/_Master/workspace/wqd7005/"
+MY_EXPORT_ROOT = ""
 the_star_link = "https://www.thestar.com.my/business/marketwatch/stock-list/?"
 MY_STORE_DIR_DAILY = "Daily-test"
 MY_STORE_DIR_SECTOR = "sector-test"
