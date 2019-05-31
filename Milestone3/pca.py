@@ -6,7 +6,7 @@ from sklearn.decomposition import PCA
 from sklearn.preprocessing import StandardScaler
 
 
-stock_df = pd.read_csv('/Users/siuhongnai/Downloads/stock_compiled.csv',low_memory=False)
+stock_df = pd.read_csv('https://github.com/michaelnai/dataminingassignment/blob/master/Milestone3/stock_compiled.csv',low_memory=False)
 stock_df = stock_df.drop(['Unnamed: 0','Change'],axis=1)
 stock_df = stock_df[stock_df.code != 52507]
 stock_df['Date'] = pd.to_datetime(stock_df.Date)
@@ -25,7 +25,7 @@ def cleaning_index(file):
     file['High'] = file['High'].apply(lambda x:float((x.replace(",",""))))
     return file
 
-index = pd.read_csv(r"/Users/siuhongnai/Desktop/WQD7005 - Data Mining/FTSE Malaysia KLCI Historical Data.csv")
+index = pd.read_csv(r"https://github.com/michaelnai/dataminingassignment/blob/master/Milestone3/FTSE%20Malaysia%20KLCI%20Historical%20Data.csv")
 index = cleaning_index(index)
 index['Return'] = index['Close'].pct_change()
 index = index.sort_values('Date',ascending=True)
