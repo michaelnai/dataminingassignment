@@ -1,7 +1,7 @@
 import pandas as pd
 import datetime as dt
 
-df = pd.read_csv("top3_combined_stock.csv")
+df = pd.read_csv("https://raw.githubusercontent.com/michaelnai/dataminingassignment/master/Milestone5/data/top3_combined_stock.csv")
 df.drop('Unnamed: 0',axis=1,inplace=True)
 df['Price Up'] = 0
 for index,row in df.iterrows():
@@ -41,4 +41,4 @@ df = pd.merge(left=df,right=klci_df[['Date','Open','Volume','Return']],left_on='
 
 
 
-df.to_csv("top3_combined_stock_binary.csv")
+df.to_csv("https://raw.githubusercontent.com/michaelnai/dataminingassignment/master/Milestone5/data/FTSE%20Malaysia%20KLCI%20Historical%20Data.csv")
