@@ -1,7 +1,7 @@
 import pandas as pd
 import datetime as dt
 
-df = pd.read_csv("https://raw.githubusercontent.com/michaelnai/dataminingassignment/master/Milestone5/data/top3_combined_stock.csv")
+df = pd.read_csv("https://github.com/michaelnai/dataminingassignment/blob/master/Milestone5/data/top3_combined_stock.csv")
 df.drop('Unnamed: 0',axis=1,inplace=True)
 df['Price Up'] = 0
 for index,row in df.iterrows():
@@ -12,7 +12,7 @@ for index,row in df.iterrows():
 df.drop('Movement',axis=1,inplace=True)
 df['Date'] = df['Date'].apply(lambda x: dt.datetime.strptime(x, '%Y-%m-%d'))
 
-klci_df = pd.read_csv('FTSE Malaysia KLCI Historical Data.csv')
+klci_df = pd.read_csv('https://github.com/michaelnai/dataminingassignment/blob/master/Milestone5/data/FTSE%20Malaysia%20KLCI%20Historical%20Data.csv')
 klci_df['Date'] = klci_df['Date'].apply(lambda x: dt.datetime.strptime(x, '%b %d, %Y'))
 klci_df = klci_df.sort_values('Date', axis=0, ascending=True)
 klci_df['Price'] = klci_df['Open'].str.replace(",","")
@@ -41,4 +41,4 @@ df = pd.merge(left=df,right=klci_df[['Date','Open','Volume','Return']],left_on='
 
 
 
-df.to_csv("https://raw.githubusercontent.com/michaelnai/dataminingassignment/master/Milestone5/data/FTSE%20Malaysia%20KLCI%20Historical%20Data.csv")
+df.to_csv("top3_combined_stock_binary.csv")
