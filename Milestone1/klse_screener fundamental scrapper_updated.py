@@ -9,7 +9,7 @@ import bs4 as bs
 import urllib.request
 import datetime as dt
 
-stock_list = pd.read_pickle(r"C:\Users\Baqar\OneDrive\Desktop\Data Mining\all script\klse_screener.pkl")
+stock_list = pd.read_pickle(r"klse_screener.pkl")
 stock_fundamental = pd.DataFrame(columns=['Stock', 'Stock Code', 'High', 'Low', 'Volume', '52w', 'ROE', 'P/E', 'EPS',
                                           'DPS', 'DY', 'PTBV', 'RPS', 'PSR', 'Market Cap'])
 
@@ -58,6 +58,6 @@ for i in stock_list[0]:
 
     except:
         failed_list.append(i)
-stock_fundamental.to_csv(r'C:\Users\Baqar\OneDrive\Desktop\Data Mining\all script\Fundamental{}.csv'.format(
+stock_fundamental.to_csv(r'Fundamental{}.csv'.format(
     dt.datetime.today().strftime('%Y-%m-%d')))
 
