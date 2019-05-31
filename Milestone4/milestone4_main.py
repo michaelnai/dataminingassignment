@@ -8,8 +8,8 @@ import matplotlib as mpl
 import matplotlib.pyplot as plt
 # ================================================= Import ================================================= #
 
-path = r'/Users/siuhongnai/Desktop/WQD7005 - Data Mining/stock_data_2019_Q1/'
-pickle_df = pd.read_pickle(r'/Users/siuhongnai/Desktop/WQD7005 - Data Mining/WQD180055_Milestone1/df.pkl')
+path = r'https://raw.githubusercontent.com/michaelnai/dataminingassignment/master/Milestone4/stock_data_2019_Q1/'
+pickle_df = pd.read_pickle(r'Milestone4/df.pkl')
 code_df = pickle_df[['code','name']]
 
 
@@ -36,7 +36,7 @@ for file in files:
 
 stock_df = pd.concat(stock_name, axis=0, ignore_index=True)
 stock_df.rename(columns = {"Vol." : "Volume", "Price" : "Close"},inplace = True)
-stock_df['Stock'] = stock_df['stock'].str.replace(path,"").str.replace(" ", "").str.replace('.csv',"").str.replace("HistoricalData","")
+stock_df['Stock'] = stock_df['stock'].str.replace(path,"").str.replace(" ", "").str.replace('%20',"").str.replace('.csv',"").str.replace("HistoricalData","")
 stock_df.drop(['Change %','stock'] ,axis=1,inplace=True)
 stock_df = pd.merge(stock_df,code_df,left_on='Stock',right_on='name',how='outer')
 stock_df.drop('name', axis=1, inplace=True)
