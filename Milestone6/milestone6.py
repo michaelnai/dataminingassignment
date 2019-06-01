@@ -1,9 +1,46 @@
 import pandas as pd
-from milestone6_toolkit import no_news_imputer, plotting_for_stocks
-import numpy as np
-import matplotlib.pyplot as plt
 from talib import RSI, BBANDS
+import glob
+import os
+import datetime as dt
+import numpy as np
+from sklearn import preprocessing
+import matplotlib.pyplot as plt
 
+
+def no_news_imputer(df):
+    """Observations with no news on the day will be imputed with 0 on polarity and no news on sentiment"""
+    for index,row in df.iterrows():
+         if np.isnan(row['polarity']):
+             df.iloc[index,-1] = 'no news'
+
+         else:
+             pass
+
+
+
+def plotting_for_stocks(df,stock):
+    """Plotting polarity and normalized stock price movement to identify relationship """
+    scaler = preprocessing.MinMaxScaler()
+    df = df.loc[df['Stock']==str(stock)]
+    x = np.array(df['Close'])
+    x = x.reshape(-1, 1)
+    x_scaled = scaler.fit_transform(x)
+
+    fig = plt.figure()
+    ax = fig.add_subplot(111)
+    ax.plot(df['Date'], x_scaled, c="green", label=str(stock))
+    ax.scatter(df['Date'], df['polarity'], label='Headline Polarity', c='red')
+    ax.legend(loc='best')
+    ax.plot(df['Date'], np.zeros(shape=(len(df), 1)), ':', c='red')
+    ax.title.set_text("2019 Q1 - Price and News Polarity of " + str(stock))
+    ax.set_xlim(df['Date'].min(), df['Date'].max())
+    ax.set_xlabel('Date')
+    ax.set_ylabel('Normalized Stock Price and Polarity')
+    ax.set_xticklabels(labels=df['Date'],rotation=90)
+    for label in ax.get_xaxis().get_ticklabels()[::2]:
+        label.set_visible(False)
+    plt.show()
 
 headlines = pd.read_csv("https://github.com/michaelnai/dataminingassignment/blob/master/Milestone6/milestone6data/headlines_df_m6.csv",index_col=0)
 headlines = headlines.rename({'date':'Date'},axis='columns')
