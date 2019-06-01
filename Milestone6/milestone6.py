@@ -6,7 +6,8 @@ import datetime as dt
 import numpy as np
 from sklearn import preprocessing
 import matplotlib.pyplot as plt
-
+from sklearn.metrics import accuracy_score
+from xgboost import XGBClassifier
 
 def no_news_imputer(df):
     """Observations with no news on the day will be imputed with 0 on polarity and no news on sentiment"""
@@ -236,8 +237,6 @@ portfolio_stocks_test = portfolio_stocks_test.dropna()
 # Train a model with Q1 data, and predict if it will make profit in the upcoming Month
 # Then we compare the model accuracy with actual data
 
-from sklearn.metrics import accuracy_score
-from xgboost import XGBClassifier
 
 train_x = portfolio_stocks.iloc[:,[1,2,3,4,5,7,9,10,11,12,14,16,17]]
 train_x = pd.get_dummies(train_x)
