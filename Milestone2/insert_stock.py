@@ -5,10 +5,10 @@ import csv
 import pandas as pd
 from datetime import datetime
 
-MY_FOLDER_ROOT = "/Users/zeroyan/Downloads/cleaned/"
-MY_SECTOR_FOLDER_ROOT = "/Users/zeroyan/Documents/_Master/workspace/wqd7005/sector-test/main market/"
-MY_EDGE_FOLDER_ROOT = "/Users/zeroyan/Documents/_Master/workspace/wqd7005/the_edge/"
-# os.listdir("/Users/zeroyan/Downloads/cleaned/")
+MY_FOLDER_ROOT = "/Users/user/Downloads/cleaned/"
+MY_SECTOR_FOLDER_ROOT = "/Users/user/Documents/_Master/workspace/wqd7005/sector-test/main market/"
+MY_EDGE_FOLDER_ROOT = "/Users/user/Documents/_Master/workspace/wqd7005/the_edge/"
+# os.listdir("/Users/user/Downloads/cleaned/")
 
 conn = pymysql.connect(host='localhost', user='root', password='', db='stock', local_infile=True)
 
@@ -23,7 +23,7 @@ def skip_last(iterator):
 
 
 def import_csv():
-    load_sql = "LOAD DATA LOCAL INFILE '/Users/zeroyan/Downloads/cleaned/0002 Kotra Industries Bhd (KOIN).csv'  \
+    load_sql = "LOAD DATA LOCAL INFILE '/Users/user/Downloads/cleaned/0002 Kotra Industries Bhd (KOIN).csv'  \
                INTO TABLE yan.temp_temp_stock \
                 FIELDS TERMINATED BY ',' OPTIONALLY ENCLOSED BY '\"' LINES TERMINATED BY '\r\n' IGNORE 1 LINES;"
 
